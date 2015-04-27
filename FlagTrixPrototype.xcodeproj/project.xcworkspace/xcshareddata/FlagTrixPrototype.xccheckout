@@ -5,11 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>CE028646-1611-4FEA-98CB-4B9D80A8EDCB</string>
+=======
+	<string>F448FE62-9C7F-4024-9AFF-9F0169CCD4A4</string>
+>>>>>>> 01f3d2ee4e57c22e2238ef224332e51a9249f140
 	<key>IDESourceControlProjectName</key>
 	<string>FlagTrixPrototype</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+<<<<<<< HEAD
 		<key>0A44850660CE833A8E33FD786642EB6270679758</key>
 		<string>https://github.com/ryanavilar/INFS2233-Lola.git</string>
 		<key>6AF58F704A21665547118DBA2D7814C617C4EA02</key>
@@ -22,20 +27,37 @@
 		<key>0A44850660CE833A8E33FD786642EB6270679758</key>
 		<string>../../../..</string>
 		<key>6AF58F704A21665547118DBA2D7814C617C4EA02</key>
+=======
+		<key>CA40BC3A-4A3E-4AA7-9D36-D223CA014574</key>
+		<string>https://github.com/ryanavilar/FlagTrixPrototype.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FlagTrixPrototype.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CA40BC3A-4A3E-4AA7-9D36-D223CA014574</key>
+>>>>>>> 01f3d2ee4e57c22e2238ef224332e51a9249f140
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ryanavilar/FlagTrixPrototype.git</string>
 	<key>IDESourceControlProjectVersion</key>
+<<<<<<< HEAD
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>6AF58F704A21665547118DBA2D7814C617C4EA02</string>
+=======
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CA40BC3A-4A3E-4AA7-9D36-D223CA014574</string>
+>>>>>>> 01f3d2ee4e57c22e2238ef224332e51a9249f140
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
 			<string>0A44850660CE833A8E33FD786642EB6270679758</string>
 			<key>IDESourceControlWCCName</key>
 			<string>..</string>
@@ -45,6 +67,9 @@
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6AF58F704A21665547118DBA2D7814C617C4EA02</string>
+=======
+			<string>CA40BC3A-4A3E-4AA7-9D36-D223CA014574</string>
+>>>>>>> 01f3d2ee4e57c22e2238ef224332e51a9249f140
 			<key>IDESourceControlWCCName</key>
 			<string>FlagTrixPrototype</string>
 		</dict>
