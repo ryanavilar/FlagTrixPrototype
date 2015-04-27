@@ -26,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		288AF3D51AEE111C00A3FA18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C6BBDC901AE607A4004424BD /* FlagTrixPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagTrixPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BBDC941AE607A4004424BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6BBDC951AE607A4004424BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +241,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C6BBDC9A1AE607A4004424BD /* Base */,
+				288AF3D51AEE111C00A3FA18 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -405,6 +407,7 @@
 				C6BBDCB11AE607A4004424BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6BBDCB21AE607A4004424BD /* Build configuration list for PBXNativeTarget "FlagTrixPrototypeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +416,7 @@
 				C6BBDCB41AE607A4004424BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RY6-Go-YGf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RY6-Go-YGf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--FlagTrix-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FlagTrixPrototype" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hce-kV-44W"/>
-                        <viewControllerLayoutGuide type="bottom" id="urf-b8-g1z"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="1" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpT-7A-nNL">
-                                <rect key="frame" x="0.0" y="59" width="600" height="541"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKW-3x-4he">
-                                <rect key="frame" x="277" y="403" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wKW-3x-4he">
+                                <rect key="frame" x="16" y="535" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -29,14 +22,12 @@
                                     <action selector="startButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vwi-Jf-QRr"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" mapType="standard" showsUserLocation="YES" id="vpT-7A-nNL">
+                                <rect key="frame" x="-6" y="66" width="332" height="461"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vpT-7A-nNL" secondAttribute="trailing" id="SEH-0U-XKz"/>
-                            <constraint firstItem="vpT-7A-nNL" firstAttribute="bottom" secondItem="urf-b8-g1z" secondAttribute="top" id="UAR-pq-HdZ"/>
-                            <constraint firstItem="vpT-7A-nNL" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="59" id="bpL-DY-bp3"/>
-                            <constraint firstItem="vpT-7A-nNL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="k4l-5v-dxi"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="rsg-RE-2r9"/>
                     <navigationItem key="navigationItem" title="FlagTrix" id="ruP-uI-RUl"/>
@@ -46,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="213"/>
+            <point key="canvasLocation" x="810" y="193"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="snZ-lr-A7m">
@@ -64,7 +55,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6P-Qr-PkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="205"/>
+            <point key="canvasLocation" x="364.80000000000001" y="194.06666666666666"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
