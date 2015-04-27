@@ -26,9 +26,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
