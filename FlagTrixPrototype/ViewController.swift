@@ -14,6 +14,19 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var currentLocation : CLLocationCoordinate2D!
+    
+    @IBAction func startButton(sender: AnyObject) {
+        // Add an annotation
+        var newYorkLocation = CLLocationCoordinate2DMake(-27.4860878, 152.9926336)
+        // Drop a pin
+        var dropPin = MKPointAnnotation()
+        dropPin.coordinate = newYorkLocation
+        dropPin.title = "New York City"
+        mapView.addAnnotation(dropPin)
+        
+    }
+    
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
