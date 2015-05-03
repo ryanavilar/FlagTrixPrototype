@@ -25,6 +25,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         dropPin.title = "New York City"
         mapView.addAnnotation(dropPin)
         
+        
     }
     
     var locationManager: CLLocationManager!
@@ -43,12 +44,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let location = locations.last as CLLocation
+        let location = locations.last as! CLLocation
         
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         self.mapView.setRegion(region, animated: true)
+        let rad = CLLocationDistance(700)
+        MKCircle(centerCoordinate: center, radius: rad)
     }
 
     
