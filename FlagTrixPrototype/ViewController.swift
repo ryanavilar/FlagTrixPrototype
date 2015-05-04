@@ -57,6 +57,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
     }
     func addRadiusCircle(location:CLLocation){
         self.mapView.delegate = self
+        var overlays = mapView.overlays
+        mapView.removeOverlays(overlays)
         var circle = MKCircle(centerCoordinate: location.coordinate, radius: 700 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
@@ -82,8 +84,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         dropPin.title = "New York City"
         mapView.addAnnotation(dropPin)
         addRadiusCircle(currentLoc)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
