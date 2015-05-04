@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Darwin
 
 class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate{
 
@@ -50,15 +51,22 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
-        self.mapView.setRegion(region, animated: true)
-
+        currentLocation = center
+        
         currentLoc = location
-        //addRadiusCircle(location)
+        
+        self.mapView.setRegion(region, animated: true)
+        
+
     }
+    
+    
     func addRadiusCircle(location:CLLocation){
+    
         self.mapView.delegate = self
         var overlays = mapView.overlays
         mapView.removeOverlays(overlays)
+        
         var circle = MKCircle(centerCoordinate: location.coordinate, radius: 700 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
@@ -77,13 +85,63 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
     }
     @IBAction func startButton(sender: AnyObject) {
         // Add an annotation
-        var newYorkLocation = CLLocationCoordinate2DMake(-27.4860878, 152.9926336)
+        var newYorkLocation = CLLocationCoordinate2DMake(-27.486622, 153.001531)
+        
+
+        addRadiusCircle(currentLoc)
+        var radius : Double = 0.7
+        
+        var randomDegree : Double = Double(arc4random_uniform(270))
+        
+        var degree : Double = randomDegree
+        println("randomDegree = \(randomDegree)")
+        var newLocations = coordinatefromCoord(currentLocation, distanceKm: radius , BearingDegrees: degree)
+        
+        var getLat = newLocations.latitude
+        var getLon = newLocations.longitude
+        
+        var newLoc = CLLocation(latitude: getLat, longitude: getLon)
+        
+        println("Old longitude = \(currentLocation.longitude)")
+        println("Old latitude = \(currentLocation.latitude)")
+        
+        println("longitude = \(newLocations.longitude)")
+        println("latitude = \(newLocations.latitude)")
+        println("distance= \(currentLoc.distanceFromLocation(newLoc))")
+        
         // Drop a pin
         var dropPin = MKPointAnnotation()
-        dropPin.coordinate = newYorkLocation
-        dropPin.title = "New York City"
+        dropPin.coordinate = newLocations
+        dropPin.title = "Player Base"
         mapView.addAnnotation(dropPin)
-        addRadiusCircle(currentLoc)
+    }
+    
+    func radiansFromDegree(degrees: Double)->Double{
+        let π : Double = M_PI
+        var results:Double = degrees*(π/180)
+        return results
+    }
+    
+    func degreesFromRadians(radians: Double)->Double{
+        return radians*(180/M_PI)
+    }
+    
+    func coordinatefromCoord(fromCoord: CLLocationCoordinate2D, distanceKm:Double, BearingDegrees:Double)->CLLocationCoordinate2D{
+        var distanceRadians : Double = distanceKm / 6371.0
+        
+        var bearingRadians : Double = radiansFromDegree(BearingDegrees)
+
+        var fromLatRadians : Double = radiansFromDegree(fromCoord.latitude)
+        
+        var fromLonRadians : Double = radiansFromDegree(fromCoord.longitude)
+        
+        var toLatRadians = asin(sin(fromLatRadians)*cos(distanceRadians) + cos(fromLatRadians)*sin(distanceRadians)*cos(bearingRadians))
+        var toLonRadians = fromLonRadians + atan2(sin(bearingRadians)*sin(distanceRadians)*cos(fromLatRadians),cos(distanceRadians)-sin(fromLatRadians)*sin(toLatRadians))
+
+        toLonRadians = fmod(toLonRadians + 3*M_PI, (2*M_PI)) - M_PI
+        var result : CLLocationCoordinate2D = CLLocationCoordinate2DMake(degreesFromRadians(toLatRadians), degreesFromRadians(toLonRadians))
+        return result
+        
     }
     
     override func didReceiveMemoryWarning() {
