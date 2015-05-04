@@ -15,6 +15,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
     @IBOutlet weak var mapView: MKMapView!
     
     var currentLocation : CLLocationCoordinate2D!
+    var currentLoc : CLLocation!
 
     var locationManager: CLLocationManager!
     
@@ -44,14 +45,15 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let location = locations.last as! CLLocation
+        let location = locations.last as CLLocation
         
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         self.mapView.setRegion(region, animated: true)
 
-        addRadiusCircle(location)
+        currentLoc = location
+        //addRadiusCircle(location)
     }
     func addRadiusCircle(location:CLLocation){
         self.mapView.delegate = self
@@ -79,6 +81,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         dropPin.coordinate = newYorkLocation
         dropPin.title = "New York City"
         mapView.addAnnotation(dropPin)
+        addRadiusCircle(currentLoc)
         
         
     }
