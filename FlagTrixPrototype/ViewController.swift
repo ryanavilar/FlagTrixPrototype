@@ -91,7 +91,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         addRadiusCircle(currentLoc)
         var radius : Double = 0.7
         
-        var randomDegree : Double = Double(arc4random_uniform(270))
+        var randomDegree : Double = Double(arc4random_uniform(360))
         
         var degree : Double = randomDegree
         println("randomDegree = \(randomDegree)")
