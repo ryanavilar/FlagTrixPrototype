@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28B7D3FE1B00DECB009638AD /* center_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B7D3FD1B00DECB009638AD /* center_icon.png */; };
 		C6BBDC961AE607A4004424BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BBDC951AE607A4004424BD /* AppDelegate.swift */; };
 		C6BBDC981AE607A4004424BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BBDC971AE607A4004424BD /* ViewController.swift */; };
 		C6BBDC9B1AE607A4004424BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6BBDC991AE607A4004424BD /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		288AF3D51AEE111C00A3FA18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		28B7D3FD1B00DECB009638AD /* center_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center_icon.png; sourceTree = "<group>"; };
 		C6BBDC901AE607A4004424BD /* FlagTrixPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagTrixPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BBDC941AE607A4004424BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6BBDC951AE607A4004424BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				C6BBDC951AE607A4004424BD /* AppDelegate.swift */,
 				C6BBDC971AE607A4004424BD /* ViewController.swift */,
 				C6BBDC991AE607A4004424BD /* Main.storyboard */,
+				28B7D3FD1B00DECB009638AD /* center_icon.png */,
 				C6BBDC9C1AE607A4004424BD /* Images.xcassets */,
 				C6BBDC9E1AE607A4004424BD /* LaunchScreen.xib */,
 				C6BBDC931AE607A4004424BD /* Supporting Files */,
@@ -196,6 +199,7 @@
 				C6BBDC9B1AE607A4004424BD /* Main.storyboard in Resources */,
 				C6BBDCA01AE607A4004424BD /* LaunchScreen.xib in Resources */,
 				C6BBDC9D1AE607A4004424BD /* Images.xcassets in Resources */,
+				28B7D3FE1B00DECB009638AD /* center_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

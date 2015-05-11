@@ -63,6 +63,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         if(centerToUserLocation){
+            println("location")
             currentLocation = center
             currentLoc = location
             self.mapView.setRegion(region, animated: true)
@@ -154,6 +155,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         toLonRadians = fmod(toLonRadians + 3*M_PI, (2*M_PI)) - M_PI
         var result : CLLocationCoordinate2D = CLLocationCoordinate2DMake(degreesFromRadians(toLatRadians), degreesFromRadians(toLonRadians))
         return result
+        
+    }
+    @IBAction func centerUserLocation(sender: AnyObject) {
+        
+        println("Clicked")
+        centerToUserLocation=true
+        println("true")
+
         
     }
     
