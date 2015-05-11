@@ -17,6 +17,10 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
     
     var currentLocation : CLLocationCoordinate2D!
     var currentLoc : CLLocation!
+    
+    var centerToUserLocation: Bool = true
+    //var rotateEnabled: Bool
+    
 
     var locationManager: CLLocationManager!
     
@@ -32,6 +36,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         // For use in foreground
         
         self.locationManager.requestWhenInUseAuthorization()
+        self.mapView.rotateEnabled=true
+        self.mapView.zoomEnabled=true
+        self.mapView.pitchEnabled=true
+        self.mapView.userInteractionEnabled=true;
+        self.mapView.scrollEnabled=true;
         
         if (CLLocationManager.locationServicesEnabled())
         {
@@ -40,26 +49,30 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
             locationManager.requestAlwaysAuthorization()
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
+            
+            
         }
 
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let location = locations.last as CLLocation
+        
+        let location = locations.last as! CLLocation
         
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        if(centerToUserLocation){
+            currentLocation = center
+            currentLoc = location
+            self.mapView.setRegion(region, animated: true)
+            centerToUserLocation=false;
+        }
         
-        currentLocation = center
-        
-        currentLoc = location
-        
-        self.mapView.setRegion(region, animated: true)
-        
-
     }
-    
+
+
+
     
     func addRadiusCircle(location:CLLocation){
     
