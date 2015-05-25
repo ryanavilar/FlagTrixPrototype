@@ -24,7 +24,6 @@
                                 </state>
                                 <connections>
                                     <action selector="startButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vwi-Jf-QRr"/>
-                                    <segue destination="P7O-qY-apA" kind="show" id="dgS-ln-jks"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-qY-TCj">
@@ -90,24 +89,6 @@
                 <rotationGestureRecognizer id="njz-OO-vAD"/>
             </objects>
             <point key="canvasLocation" x="1518.75" y="203.87323943661971"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="I1h-x6-kOk">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cY2-Na-4NH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="P7O-qY-apA" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PhI-5L-8nG"/>
-                        <viewControllerLayoutGuide type="bottom" id="ucZ-cB-CMl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="roY-nI-zL2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="2238" y="477"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="snZ-lr-A7m">
