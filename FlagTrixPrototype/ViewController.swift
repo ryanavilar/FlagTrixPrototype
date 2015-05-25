@@ -11,12 +11,17 @@ import MapKit
 import CoreLocation
 import Darwin
 
-class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate{
-
+class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate,PNDelegate{
+    
+    private var channel = PNChannel()
+    private let config = PNConfiguration(publishKey: "pub-c-abb44363-d8fd-4e4e-a3b7-4ee2f2181ac4", subscribeKey: "sub-c-4d55b60a-cc5d-11e4-8fa6-0619f8945a4f", secretKey: "sec-c-MzY3ODQ1YWUtYjU0Mi00MWRlLWEyM2EtZTNiOWM3YTIxYzY4")
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var currentLocation : CLLocationCoordinate2D!
     var currentLoc : CLLocation!
+    
+    var loginUser : Int!
     
     var centerToUserLocation: Bool = true
     //var rotateEnabled: Bool
@@ -24,9 +29,56 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
 
     var locationManager: CLLocationManager!
     
+    func PubNubStart(){
+        PubNub.setDelegate(self)
+        PubNub.setConfiguration(self.config)
+        PubNub.connect()
+        self.channel = PNChannel.channelWithName("flagtrix", shouldObservePresence: false) as PNChannel
+        PubNub.subscribeOn([self.channel])
+        addData()
+        
+    }
+    
+    func addData(){
+        let message = "{\"lat\":35.70879,\"lng\":139.775327, \"alt\":0.0,\"id\":3}"
+        let message2 = "{\"lat\":35.70579,\"lng\":139.777327, \"alt\":0.0,\"id\":4}"
+        let message3 = "{\"lat\":35.70679,\"lng\":139.778327, \"alt\":0.0,\"id\":5}"
+        let message4 = "{\"lat\":35.70579,\"lng\":139.776327, \"alt\":0.0,\"id\":6}"
+        let message5 = "{\"lat\":35.70479,\"lng\":139.772327, \"alt\":0.0,\"id\":7}"
+        PubNub.sendMessage(message, toChannel: self.channel, compressed: true)
+        PubNub.sendMessage(message2, toChannel: self.channel, compressed: true)
+        PubNub.sendMessage(message3, toChannel: self.channel, compressed: true)
+        PubNub.sendMessage(message4, toChannel: self.channel, compressed: true)
+        PubNub.sendMessage(message5, toChannel: self.channel, compressed: true)
+    }
+    
+    func pubnubClient(client: PubNub!, didReceiveMessage message: PNMessage!) {
+ 
+        // Extract content from received message
+        handleOtherLocation(message)
+        
+    }
+    
+    func handleOtherLocation(message: PNMessage!){
+        let receivedMessage = message.message as [NSString : Double]
+        let lng : CLLocationDegrees! = receivedMessage["lng"]
+        let lat : CLLocationDegrees! = receivedMessage["lat"]
+        let alt : CLLocationDegrees! = receivedMessage["alt"]
+        let login : Double! = receivedMessage["id"]
+        if(loginUser != Int(login)){
+            println("This \(login) is located \(lng),\(lat),\(alt)")
+            let newLocation2D = CLLocationCoordinate2DMake(lat, lng)
+            var dropPin2 = MKPointAnnotation()
+            dropPin2.coordinate = newLocation2D
+            dropPin2.title = "Enemy ID : \(login)"
+            mapView.addAnnotation(dropPin2)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginUser = 1
+        PubNubStart()
         
         //predefined location
         locationManager = CLLocationManager()
@@ -58,6 +110,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
+        
         let location = locations.last as CLLocation
         
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
@@ -68,12 +121,13 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
             currentLoc = location
             self.mapView.setRegion(region, animated: true)
             centerToUserLocation=false;
+            
         }
+        //println("current position: \(location.coordinate.longitude) , \(location.coordinate.latitude)")
         
+        let message = "{\"lat\":\(location.coordinate.latitude),\"lng\":\(location.coordinate.longitude), \"alt\": \(location.altitude),\"id\":\(loginUser)}"
+        PubNub.sendMessage(message, toChannel: self.channel, compressed: true)
     }
-
-
-
     
     func addRadiusCircle(location:CLLocation){
     
@@ -97,6 +151,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
             return nil
         }
     }
+
     @IBAction func startButton(sender: AnyObject) {
         // Add an annotation
         var newYorkLocation = CLLocationCoordinate2DMake(-27.486622, 153.001531)
@@ -110,6 +165,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         var degree : Double = randomDegree
         println("randomDegree = \(randomDegree)")
         var newLocations = coordinatefromCoord(currentLocation, distanceKm: radius , BearingDegrees: degree)
+        var newLocations2 = coordinatefromCoord(currentLocation, distanceKm: radius , BearingDegrees: degree+180)
+
         
         var getLat = newLocations.latitude
         var getLon = newLocations.longitude
@@ -119,8 +176,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         println("Old longitude = \(currentLocation.longitude)")
         println("Old latitude = \(currentLocation.latitude)")
         
-        println("longitude = \(newLocations.longitude)")
-        println("latitude = \(newLocations.latitude)")
+        println("enemy longitude = \(newLocations2.longitude)")
+        println("enemy latitude = \(newLocations2.latitude)")
         println("distance= \(currentLoc.distanceFromLocation(newLoc))")
         
         // Drop a pin
@@ -128,6 +185,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         dropPin.coordinate = newLocations
         dropPin.title = "Player Base"
         mapView.addAnnotation(dropPin)
+        
+        var dropPin2 = MKPointAnnotation()
+        dropPin2.coordinate = newLocations2
+        dropPin2.title = "Enemy Base"
+        mapView.addAnnotation(dropPin2)
     }
     
     func radiansFromDegree(degrees: Double)->Double{
@@ -171,6 +233,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // this is called before the segue happens
+    }
 
 }
 

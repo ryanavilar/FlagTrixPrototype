@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RY6-Go-YGf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RY6-Go-YGf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--FlagTrix-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FlagTrixPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GuL-8C-epg"/>
+                        <viewControllerLayoutGuide type="bottom" id="u76-AD-FAB"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="1" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wKW-3x-4he">
-                                <rect key="frame" x="235" y="531" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKW-3x-4he">
+                                <rect key="frame" x="283" y="486" width="33" height="30"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vwi-Jf-QRr"/>
+                                    <segue destination="P7O-qY-apA" kind="show" id="dgS-ln-jks"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" mapType="standard" showsUserLocation="YES" id="vpT-7A-nNL">
-                                <rect key="frame" x="-6" y="66" width="332" height="461"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="njz-OO-vAD" appends="YES" id="LhD-xE-xpD"/>
-                                </connections>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="0gg-qY-TCj">
-                                <rect key="frame" x="16" y="531" width="32" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-qY-TCj">
+                                <rect key="frame" x="10" y="441" width="74" height="85"/>
                                 <state key="normal" image="center_icon">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,9 +37,46 @@
                                     <action selector="centerUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="D3k-QE-feP"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpT-7A-nNL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="446"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="njz-OO-vAD" appends="YES" id="LhD-xE-xpD"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99d-01-QDJ">
+                                <rect key="frame" x="277" y="441" width="46" height="50"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0gg-qY-TCj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="43z-i7-fXA"/>
+                            <constraint firstItem="vpT-7A-nNL" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="7Zp-WD-GXV"/>
+                            <constraint firstItem="u76-AD-FAB" firstAttribute="top" secondItem="99d-01-QDJ" secondAttribute="bottom" constant="20" id="8pK-mG-0Xa"/>
+                            <constraint firstAttribute="centerX" secondItem="99d-01-QDJ" secondAttribute="centerX" id="LWQ-QC-vFm"/>
+                            <constraint firstAttribute="centerX" secondItem="0gg-qY-TCj" secondAttribute="centerX" id="MUN-4t-fJ3"/>
+                            <constraint firstItem="u76-AD-FAB" firstAttribute="top" secondItem="99d-01-QDJ" secondAttribute="bottom" constant="20" id="R1t-xR-qXO"/>
+                            <constraint firstItem="99d-01-QDJ" firstAttribute="top" secondItem="vpT-7A-nNL" secondAttribute="bottom" constant="20" id="TdH-hM-bhb"/>
+                            <constraint firstItem="wKW-3x-4he" firstAttribute="top" secondItem="vpT-7A-nNL" secondAttribute="bottom" constant="40" id="Xzy-Yq-eH5"/>
+                            <constraint firstItem="vpT-7A-nNL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cm7-4L-QoW"/>
+                            <constraint firstAttribute="trailing" secondItem="vpT-7A-nNL" secondAttribute="trailing" id="m59-lF-sqf"/>
+                            <constraint firstAttribute="bottom" secondItem="wKW-3x-4he" secondAttribute="bottom" constant="20" id="qUa-WJ-HMQ"/>
+                            <constraint firstAttribute="bottom" secondItem="0gg-qY-TCj" secondAttribute="bottom" constant="10" id="y0S-Ol-xim"/>
+                            <constraint firstAttribute="centerX" secondItem="wKW-3x-4he" secondAttribute="centerX" id="zOm-kw-NRf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MUN-4t-fJ3"/>
+                                <exclude reference="8pK-mG-0Xa"/>
+                                <exclude reference="R1t-xR-qXO"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="rsg-RE-2r9"/>
                     <navigationItem key="navigationItem" title="FlagTrix" id="ruP-uI-RUl"/>
                     <connections>
@@ -58,7 +89,25 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="jI5-T4-1EO"/>
                 <rotationGestureRecognizer id="njz-OO-vAD"/>
             </objects>
-            <point key="canvasLocation" x="810" y="193"/>
+            <point key="canvasLocation" x="1518.75" y="203.87323943661971"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I1h-x6-kOk">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cY2-Na-4NH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="P7O-qY-apA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PhI-5L-8nG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ucZ-cB-CMl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="roY-nI-zL2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2238" y="477"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="snZ-lr-A7m">
@@ -76,15 +125,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6P-Qr-PkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364.80000000000001" y="194.06666666666666"/>
+            <point key="canvasLocation" x="684" y="204.99999999999997"/>
         </scene>
     </scenes>
     <resources>
         <image name="center_icon" width="74" height="85"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
