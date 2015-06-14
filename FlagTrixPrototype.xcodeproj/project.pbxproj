@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		28B7D3FE1B00DECB009638AD /* center_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B7D3FD1B00DECB009638AD /* center_icon.png */; };
+		C64BDD531B15DCCD00B04BFA /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BDD521B15DCCD00B04BFA /* GameData.swift */; };
+		C668D7B51B18498300BE9D60 /* team.png in Resources */ = {isa = PBXBuildFile; fileRef = C668D7B41B18498300BE9D60 /* team.png */; };
+		C668D7B71B185BE500BE9D60 /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = C668D7B61B185BE500BE9D60 /* enemy.png */; };
+		C668D7BC1B18611700BE9D60 /* blueteam.png in Resources */ = {isa = PBXBuildFile; fileRef = C668D7BA1B18611700BE9D60 /* blueteam.png */; };
+		C668D7BD1B18611700BE9D60 /* greenteam.png in Resources */ = {isa = PBXBuildFile; fileRef = C668D7BB1B18611700BE9D60 /* greenteam.png */; };
+		C668D7C01B1A9C5200BE9D60 /* blueflag.png in Resources */ = {isa = PBXBuildFile; fileRef = C668D7BE1B1A9C5200BE9D60 /* blueflag.png */; };
+		C668D7C11B1A9C5200BE9D60 /* greenflag.png in Resources */ = {isa = PBXBuildFile; fileRef = C668D7BF1B1A9C5200BE9D60 /* greenflag.png */; };
 		C6BBDC961AE607A4004424BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BBDC951AE607A4004424BD /* AppDelegate.swift */; };
 		C6BBDC981AE607A4004424BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BBDC971AE607A4004424BD /* ViewController.swift */; };
 		C6BBDC9B1AE607A4004424BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6BBDC991AE607A4004424BD /* Main.storyboard */; };
@@ -33,6 +40,14 @@
 		4BAC04040B9681AF47EDE755 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7597DC5C3587B554592BFE7D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B27E87999755B56F1BD34C6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C64BDD521B15DCCD00B04BFA /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		C65C696C1B2AB47D0022EF07 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		C668D7B41B18498300BE9D60 /* team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = team.png; path = ../../../../../Pictures/team.png; sourceTree = "<group>"; };
+		C668D7B61B185BE500BE9D60 /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy.png; path = "../../../../../Creative Cloud Files/enemy.png"; sourceTree = "<group>"; };
+		C668D7BA1B18611700BE9D60 /* blueteam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueteam.png; path = "../../../../../Creative Cloud Files/blueteam.png"; sourceTree = "<group>"; };
+		C668D7BB1B18611700BE9D60 /* greenteam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenteam.png; path = "../../../../../Creative Cloud Files/greenteam.png"; sourceTree = "<group>"; };
+		C668D7BE1B1A9C5200BE9D60 /* blueflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueflag.png; path = "../../../../../Creative Cloud Files/blueflag.png"; sourceTree = "<group>"; };
+		C668D7BF1B1A9C5200BE9D60 /* greenflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenflag.png; path = "../../../../../Creative Cloud Files/greenflag.png"; sourceTree = "<group>"; };
 		C6BA1FB61B0A324B00001A6C /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		C6BBDC901AE607A4004424BD /* FlagTrixPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagTrixPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BBDC941AE607A4004424BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +112,12 @@
 		C6BBDC921AE607A4004424BD /* FlagTrixPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				C668D7BE1B1A9C5200BE9D60 /* blueflag.png */,
+				C668D7BF1B1A9C5200BE9D60 /* greenflag.png */,
+				C668D7B41B18498300BE9D60 /* team.png */,
+				C668D7BA1B18611700BE9D60 /* blueteam.png */,
+				C668D7BB1B18611700BE9D60 /* greenteam.png */,
+				C668D7B61B185BE500BE9D60 /* enemy.png */,
 				C6BBDC951AE607A4004424BD /* AppDelegate.swift */,
 				C6BA1FB61B0A324B00001A6C /* BridgingHeader.h */,
 				C6BBDC971AE607A4004424BD /* ViewController.swift */,
@@ -105,6 +126,8 @@
 				C6BBDC9C1AE607A4004424BD /* Images.xcassets */,
 				C6BBDC9E1AE607A4004424BD /* LaunchScreen.xib */,
 				C6BBDC931AE607A4004424BD /* Supporting Files */,
+				C64BDD521B15DCCD00B04BFA /* GameData.swift */,
+				C65C696C1B2AB47D0022EF07 /* Header.h */,
 			);
 			path = FlagTrixPrototype;
 			sourceTree = "<group>";
@@ -224,10 +247,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C668D7C01B1A9C5200BE9D60 /* blueflag.png in Resources */,
 				C6BBDC9B1AE607A4004424BD /* Main.storyboard in Resources */,
+				C668D7B51B18498300BE9D60 /* team.png in Resources */,
+				C668D7C11B1A9C5200BE9D60 /* greenflag.png in Resources */,
 				C6BBDCA01AE607A4004424BD /* LaunchScreen.xib in Resources */,
+				C668D7BD1B18611700BE9D60 /* greenteam.png in Resources */,
+				C668D7B71B185BE500BE9D60 /* enemy.png in Resources */,
 				C6BBDC9D1AE607A4004424BD /* Images.xcassets in Resources */,
 				28B7D3FE1B00DECB009638AD /* center_icon.png in Resources */,
+				C668D7BC1B18611700BE9D60 /* blueteam.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6BBDC981AE607A4004424BD /* ViewController.swift in Sources */,
+				C64BDD531B15DCCD00B04BFA /* GameData.swift in Sources */,
 				C6BBDC961AE607A4004424BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

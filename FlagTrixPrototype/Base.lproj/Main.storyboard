@@ -46,9 +46,12 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99d-01-QDJ">
                                 <rect key="frame" x="277" y="441" width="46" height="50"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Steal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="StoleThis:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K49-BB-hSi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -80,6 +83,8 @@
                     <navigationItem key="navigationItem" title="FlagTrix" id="ruP-uI-RUl"/>
                     <connections>
                         <outlet property="mapView" destination="vpT-7A-nNL" id="RCo-aS-p1D"/>
+                        <outlet property="sbutton" destination="wKW-3x-4he" id="KCo-6u-tFv"/>
+                        <outlet property="stoleButton" destination="99d-01-QDJ" id="PZl-Tl-BUU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
